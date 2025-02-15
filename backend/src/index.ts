@@ -5,24 +5,21 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Store OTPs in a simple in-memory object
 const otpStore: Record<string, string> = {};
 
-// Endpoint to generate and log OTP
 app.post("/generate-otp", (req: Request, res: Response) => {
   const email = req.body.email;
   if (!email) {
     res.status(400).json({ message: "Email is required" });
     return;
   }
-  const otp = Math.floor(100000 + Math.random() * 900000).toString(); // generates a 6-digit OTP
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
   otpStore[email] = otp;
 
-  console.log(`OTP for ${email}: ${otp}`); // Log the OTP to the console
+  console.log(`OTP for ${email}: ${otp}`);
   res.status(200).json({ message: "OTP generated and logged" });
 });
 
-// Endpoint to reset password
 app.post("/reset-password", (req: Request, res: Response) => {
   const { email, otp, newPassword } = req.body;
   if (!email || !otp || !newPassword) {
