@@ -4,7 +4,6 @@ const app = express();
 const PORT = 3000;
 
 
-const otpStore: Record<string, string> = {};
 
 app.post("/generate-otp", (req: Request, res: Response) => {
   const email = req.body.email;
