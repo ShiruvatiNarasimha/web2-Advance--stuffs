@@ -35,5 +35,4 @@ app.post("/reset-password", (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
 });
