@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const PORT = 3000;
 // Store OTPs in a simple in-memory object
-const otpStore = {};
 // Endpoint to generate and log OTP
 app.post("/generate-otp", (req, res) => {
     const email = req.body.email;
