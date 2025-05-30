@@ -5,7 +5,6 @@ startLogger();
 
 setInterval(() => {
   games.push({
-    id: Math.random().toStrin
-    blackPlayer:
+    id: Math.random().toStri
   });
 }, 5000);
