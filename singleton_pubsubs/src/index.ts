@@ -7,7 +7,6 @@ setInterval(() => {
   games.push({
     id: Math.random().toString(),
     whitePlayer: "shiruvati",
-    blackPlayer: "Abhi",
-    moves: [],
+    blackPlayer:
   });
 }, 5000);
